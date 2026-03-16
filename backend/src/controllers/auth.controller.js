@@ -12,7 +12,7 @@ export const signup = async (req, res) => {
 
     try {
      if(!fullName || !email || !password) {
-        return res.status(400).json({message:"All fields are requires"})
+        return res.status(400).json({message:"All fields are required"})
      }
        
      if(password.length < 6) {
@@ -100,7 +100,7 @@ export const login = async(req, res) => {
         });
 
     } catch(error) {
-      console.error("Error i n login controller: ", error)
+      console.error("Error in login controller: ", error)
       res.status(500).json({message:"Internal server error"})
     };
 };
