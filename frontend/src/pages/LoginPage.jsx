@@ -5,7 +5,7 @@ function LoginPage() {
   const {authUser, isLoading, login} = useAuthStore()
   return (
     <div>
-      
+      Login Page
     </div>
   )
 }
