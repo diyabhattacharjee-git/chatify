@@ -5,7 +5,7 @@ import NoChatsFound from "./NoChatsFound";
 // import { useAuthStore } from "../store/useAuthStore";
 
 function ChatsList() {
-  const {getMyChatPartners, chats, isUsersLoading, setSelectedUser} = useChatStore();
+  const {getMyChatPartners, chats, isUsersLoading, setSelecteduser} = useChatStore();
   // const {onlineUsers} = useAuthStore();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ function ChatsList() {
       {chats.map((chat) => (
         <div key={chat._id}
         className="bg-cyan-500/10 p-4 rounded-lg cursor-pointer hover:bg-cyan-500/20 transition-colors"
-        onClick={()=> setSelectedUser(chat)}
+        onClick={()=> setSelecteduser(chat)}
         >
           <div className="flex items-center gap-3">
             {/* Fix using socket.io --> online status and make it work with socket*/}
