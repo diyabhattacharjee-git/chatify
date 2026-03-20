@@ -3,11 +3,14 @@ import { axiosInstance } from '../lib/axios';
 import toast from "react-hot-toast"
 import { LogOut } from 'lucide-react';
 
-export const useAuthStore = create ((set) => ({
+// const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:3000" : "/";
+
+export const useAuthStore = create ((set,get) => ({
     authUser: null,
     isCheckingAuth:true,
     isSigningUp: false,
     isLoggingIn: false,
+    isLoadingIn: false,
 
 
     checkAuth: async () =>{
@@ -63,5 +66,19 @@ export const useAuthStore = create ((set) => ({
             toast.error("Error logging out");
             console.log(firstError);
         }
-    }
+    },
+
+    updateProfile: async(data) => {
+        set({isLoadingIn:true})
+        try {
+            const res = await axiosInstance.put("/auth/updateProfile", data);
+            set({authUser:res.data});
+            toast.success("Profile updated successfully");
+        } catch (error) {
+            console.log("Error in update profile:", error);
+            toast.error(error.response.data.message);
+        } finally {
+            set({isLoadingIn:false})
+        }
+    },
 }));
