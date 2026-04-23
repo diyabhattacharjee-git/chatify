@@ -15,7 +15,7 @@ function LoginPage() {
 
   return (
     <div className="w-full flex items-center justify-center p-4 bg-slate-900">
-      <div className="relative w-full max-w-6xl md:h-[630px] h-[670px]">
+      <div className="relative w-full max-w-6xl md:h-[670px] h-[630px]">
         <BorderAnimatedContainer>
           <div className="w-full flex flex-col md:flex-row">
             {/* FORM CLOUMN - LEFT SIDE */}
@@ -88,7 +88,7 @@ function LoginPage() {
                   alt="People using mobile devices"
                   className="w-full h-auto object-contain"
                 />
-                <div className="mt-1 text-center">
+                <div className="mt-6 text-center">
                   <h3 className="text-xl font-medium text-cyan-400">Connect anytime, anywhere</h3>
 
                   <div className="mt-4 flex justify-center gap-4">
