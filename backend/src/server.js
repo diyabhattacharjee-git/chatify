@@ -7,11 +7,12 @@ import authRoutes from "./routes/auth.route.js"
 import messageRoutes from "./routes/message.route.js"
 import { connectDB } from "./lib/db.js"
 import {ENV} from "./lib/env.js"
+import { app, server } from "./lib/socket.js"
 import cors from "cors"
 
 // dotenv.config();
 
-const app = express();
+// const app = express();
 const __dirname = path.resolve();
 
 const PORT = ENV.PORT || 3000;
@@ -41,7 +42,7 @@ if(process.env.NODE_ENV ==="production"){
 // });
 
 connectDB().then(() => {
-    app.listen(PORT, () => {
+    server.listen(PORT, () => {
         console.log(`Server running on port: ${PORT}`);
     });
 })
