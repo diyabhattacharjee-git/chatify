@@ -4,8 +4,8 @@
 ### Home Page
 ![Home](assets/home.png)
 
-### Book Recommendation
+### Login Page
 ![Login](assets/login.png)
 
-### Price Comparison
+### Signup Page
 ![SignUp](assets/signup.png)
